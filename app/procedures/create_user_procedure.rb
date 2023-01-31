@@ -43,7 +43,7 @@ class CreateUserProcedure < ApplicationProcedure
   end
 
   def send_welcome_mail
-    # mail to user
+    WelcomeMailer.welcome_email(user).deliver_later
   end
 
   def login_user
